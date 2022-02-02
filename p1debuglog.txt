@@ -1,0 +1,7 @@
+ 
+ gcc -g p1original.c
+ ./a.out
+enter any two number
+6 
+4
+addition is :10

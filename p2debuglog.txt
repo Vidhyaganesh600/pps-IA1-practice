@@ -1,0 +1,9 @@
+ gcc -g p2original.c
+ ./a.out
+enter a number
+2
+enter a number
+5
+enter a number
+7
+largest number among 2,5,7 is :7
