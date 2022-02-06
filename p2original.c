@@ -13,7 +13,7 @@ int cmp(int a,int b,int c,int largest)
     largest=a;
     return a;
   }
-  else if(b>a && b>c)
+  else if(b>c)
   {
     largest=b;
     return b;
