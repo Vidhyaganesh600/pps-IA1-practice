@@ -9,7 +9,7 @@ int input_n()
 int sum_n(int n)
 {
   int i,sum=0;
-  for(i=1,i<=n;i++);
+  for(i=1;i<=n;i++);
   {
     sum=sum+i;
   }
@@ -19,10 +19,17 @@ int sum_n(int n)
 void output(int n,int sum)
 {
   int i;
-  for(i=1,i<=n;i++)
+  for(i=1;i<=n;i++);
   {
     printf("%d+",i);
   }
   printf("%d is %d\n",sum);
 }
-int main
+int main()
+{
+  int x,y;
+  x=input_n();
+  y=sum_n(x);
+  output(x,y);
+  return 0;
+}
