@@ -13,17 +13,16 @@ int sum_n(int n)
   {
     sum=sum+i;
   }
-  printf("sum is %d\n",sum);
   return sum;
 }
 void output(int n,int sum)
 {
   int i;
-  for(i=1;i<=n;i++);
+  for(i=0;i<n;i++);
   {
     printf("%d+",i);
   }
-  printf("%d is %d\n",sum);
+  printf("%d is %d\n",i,sum);
 }
 int main()
 {

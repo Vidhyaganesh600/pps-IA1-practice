@@ -1,0 +1,140 @@
+ gcc -g p4final.c
+ ./a.out
+enter the size of the array
+3
+enter the values into the array
+1
+enter the values into the array
+7
+enter the values into the array
+11
+1+7+11 is 19
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x8f1: file p4final.c, line 36.
+(gdb) r
+Starting program: /home/runner/pps-IA1-practice/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p4final.c:36
+36  {
+(gdb) n
+38    a=input_array_size();
+(gdb) s
+input_array_size () at p4final.c:3
+3   {
+(gdb) n
+5     printf("enter the size of the array\n");
+(gdb) n
+enter the size of the array
+6     scanf("%d",&a);
+(gdb) n
+3
+7     return a;
+(gdb) n
+8   }
+(gdb) n
+main () at p4final.c:39
+39    int b[a];
+(gdb) s
+40    input_array(a,b);
+(gdb) s
+input_array (n=3, a=0x7fff3e6b6e40) at p4final.c:11
+11    for(int i=0;i<n;i++)
+(gdb) n
+13      printf("enter the values into the array\n");
+(gdb) n
+enter the values into the array
+14      scanf("%d",&a[i]);
+(gdb) n
+1
+11    for(int i=0;i<n;i++)
+(gdb) n
+13      printf("enter the values into the array\n");
+(gdb) n
+enter the values into the array
+14      scanf("%d",&a[i]);
+(gdb) n
+7
+11    for(int i=0;i<n;i++)
+(gdb) n
+13      printf("enter the values into the array\n");
+(gdb) n
+enter the values into the array
+14      scanf("%d",&a[i]);
+(gdb) n
+11
+11    for(int i=0;i<n;i++)
+(gdb) n
+16  }
+(gdb) n
+main () at p4final.c:41
+41    s=sum_n_arrays(a,b);
+(gdb) s
+sum_n_arrays (n=3, a=0x7fff3e6b6e40) at p4final.c:19
+19    int sum=0;
+(gdb) n
+20    for(int i=0;i<n;i++)
+(gdb) n
+22      sum=sum+a[i];
+(gdb) n
+20    for(int i=0;i<n;i++)
+(gdb) n
+22      sum=sum+a[i];
+(gdb) n
+20    for(int i=0;i<n;i++)
+(gdb) n
+22      sum=sum+a[i];
+(gdb) n
+20    for(int i=0;i<n;i++)
+(gdb) n
+24    return sum;
+(gdb) n
+25  }
+(gdb) p sum
+$1 = 19
+(gdb) n
+main () at p4final.c:42
+42    out_put(a,b,s);
+(gdb) s
+out_put (n=3, a=0x7fff3e6b6e40, sum=19) at p4final.c:29
+29    for(i=0;i<n-1;i++)
+(gdb) n
+31      printf("%d+",a[i]);
+(gdb) n
+29    for(i=0;i<n-1;i++)
+(gdb) n
+31      printf("%d+",a[i]);
+(gdb) n
+29    for(i=0;i<n-1;i++)
+(gdb) n
+33     printf("%d is %d\n",a[i],sum);
+(gdb) n
+1+7+11 is 19
+34  }
+(gdb) n
+main () at p4final.c:43
+43    return 0;
+(gdb) n
+44  }(gdb) q
+A debugging session is active.
+
+    Inferior 1 [process 145] will be killed.
+
+Quit anyway? (y or n) y
+ 
