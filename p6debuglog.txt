@@ -1,5 +1,4 @@
-unable to run, main file "main.sh" not found
- gcc -g p6original.c
+ gcc -g p6final.c
  ./a.out
 enter any two words
 hello
@@ -22,12 +21,12 @@ For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.out...done.
 (gdb) b main
-Breakpoint 1 at 0x8c4: file p6original.c, line 23.
+Breakpoint 1 at 0x8c4: file p6final.c, line 23.
 (gdb) r
 Starting program: /home/runner/pps-IA1-practice/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p6original.c:23
+Breakpoint 1, main () at p6final.c:23
 23  {
 (gdb) n
 26    input_two_string(a,b);
@@ -37,18 +36,19 @@ hello
 world
 27    c=strcmp(a,b);
 (gdb) s
-strcmp (a=0x7ffc3ccb0a84 "hello", b=0x7ffc3ccb0a8e "world") at p6original.c:10
+strcmp (a=0x7ffe219909f4 "hello", 
+    b=0x7ffe219909fe "world") at p6final.c:10
 10    for(i=0;a[i] !='\0' && a[i]==b[i];i++);
 (gdb) n
 11    return (a[i]-b[i]);
 (gdb) n
 12  }
 (gdb) n
-main () at p6original.c:28
+main () at p6final.c:28
 28    output(a,b,c);
 (gdb) s
-output (a=0x7ffc3ccb0a84 "hello", b=0x7ffc3ccb0a8e "world", result=-15)
-    at p6original.c:15
+output (a=0x7ffe219909f4 "hello", 
+    b=0x7ffe219909fe "world", result=-15) at p6final.c:15
 15    if (result>0)
 (gdb) n
 17    else if(result==0)
@@ -58,11 +58,13 @@ output (a=0x7ffc3ccb0a84 "hello", b=0x7ffc3ccb0a8e "world", result=-15)
 world is greater than hello
 21  }
 (gdb) n
-main () at p6original.c:29
+main () at p6final.c:29
 29    return 0;
 (gdb) n
 30  }(gdb) q
 A debugging session is active.
 
-    Inferior 1 [process 32] will be killed.
+    Inferior 1 [process 309] will be killed.
 
+Quit anyway? (y or n) y
+ 
